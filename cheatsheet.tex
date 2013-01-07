@@ -1,20 +1,74 @@
 \documentclass[ngerman, a4paper, 10pt, twocolumn, DIV20, headings=small]{scrartcl}
 \usepackage[german]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
 
+\newtheorem{definition}{Definition}
+\newtheorem{satz}{Satz}
 
 \begin{document}
 
 \section{Kombinatorik}
 \label{sec:kombinatorik}
 
-
 \begin{tabular}{l l}
   Produktregeln &  \\
-  Permutation &  \\
+  $k$-Permutation &  $P(n,k) = \frac{n!}{(n-k)!}$\\
+  Permutation & $P(n,n) = n!$ \\
   Kombination & \\
 \end{tabular}
 
+\section{Ereignisse}
+\label{sec:ereignisse}
+
+\begin{definition}
+  Alle m"oglichen sich gegenseitig ausschliessenden Ergebnisse eines Zufallexperiments bilden die Menge aller Elementarereignisse $\Omega$.
+\end{definition}
+
+\begin{definition}
+  Ein Ereignis $A$ ist eine Teilmenge von $\Omega$. $A \subset \Omega$. Es ist eingetreten wenn das Ergebnis des Zufallexperiment ein Element von $A$ ist. Einelementige Teilmengen von $\Omega$ sind Elementarereignisse. Die Potenzmenge ${\cal P}(\Omega)$ beinhaltet alle theoretisch m"oglichen Ereignisse.
+\end{definition}
+
+\begin{tabular}{|l|c|}
+\hline
+Begriff&Modell\\
+\hline
+Elementarereignis&$\omega$\\
+alle Elementarereignisse&$\Omega$\\
+Ereignis&$A\subset\Omega$\\
+sicheres Ereignis&$\Omega$\\
+unm"ogliches Ereignis&$\emptyset$\\
+$A$ und $B$&$A\cap B$\\
+$A$ oder $B$&$A\cup B$\\
+$A$ hat $B$ zur Folge, $A\Rightarrow B$&$A\subset B$\\
+nicht $A$&$\Omega\setminus A$\\
+\hline
+\end{tabular}
+
+\section{Wahrscheinlichkeit}
+\label{sec:wahrscheinlichkeit}
+
+\begin{satz}
+  Bei einem Laplace-Experiment $| \Omega |$ m"oglichen Ergebnissen gilt
+\[
+P(A) = \frac{|A|}{|\Omega|}
+\]
+\end{satz}
+
+\begin{definition}
+Die Ereignisse $A$ und $B$ heissen {\bf unabh"angig}, wenn gilt:
+\[
+P(A\cap B) = P(A)\cdot P(B).
+\]
+\end{definition}
+
+\begin{satz}
+Ist $B_i$ eine Folge paarweise disjunkter Mengen mit $\bigcup_{i=0}^{n}B_i=\Omega$, dann gilt f"ur jedes Ereignis $A$
+\[
+P(A)=\sum_{i=0}^{n}P(A|B_i)\cdot P(B_i).
+\]
+\end{satz}
 
 \section{Octave}
 \label{sec:octave}
