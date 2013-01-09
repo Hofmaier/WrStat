@@ -16,7 +16,7 @@
   Produktregeln &  \\
   $k$-Permutation &  $P(n,k) = \frac{n!}{(n-k)!}$\\
   Permutation & $P(n,n) = n!$ \\
-  Kombination & \\
+  Kombination & $ C^n_k=\binom{n}{k} $ \\ 
 \end{tabular}
 
 \section{Ereignisse}
@@ -56,6 +56,17 @@ P(A) = \frac{|A|}{|\Omega|}
 \]
 \end{satz}
 
+\begin{satz}
+F"ur zwei Ereignisse $A$ und $B$ ist die Wahrscheinlichkeit, dass das Ereignis $A$ oder $B$ eintritt gleich
+\[
+P(A\cup B) = P(A) + P(B) - P(A\cap B)
+\]
+falls $ A \cup B = {} $
+\[
+P(A\cup B) = P(A) + P(B)
+\]
+\end{satz}
+
 \begin{definition}
 Die Ereignisse $A$ und $B$ heissen {\bf unabh"angig}, wenn gilt:
 \[
@@ -70,6 +81,19 @@ P(A)=\sum_{i=0}^{n}P(A|B_i)\cdot P(B_i).
 \]
 \end{satz}
 
+\begin{satz}[Satz von Bayes]
+F"ur zwei Ereignisse $A$ und $B$ mit $P(B)\ne0$ gilt
+\[
+P(A|B)=\frac{P(B|A)\cdot P(A)}{P(B)}.
+\]
+\end{satz}
+
+\section{Erwartungswert}
+\label{sec:erwartungswert}
+
+\[
+E=\sum_{i=1}^{n}g_iP(A_i).
+\]
 \section{Octave}
 \label{sec:octave}
 
