@@ -3,6 +3,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 
 \newtheorem{definition}{Definition}
 \newtheorem{satz}{Satz}
@@ -94,6 +96,86 @@ P(A|B)=\frac{P(B|A)\cdot P(A)}{P(B)}.
 \[
 E=\sum_{i=1}^{n}g_iP(A_i).
 \]
+
+\begin{satz}
+\label{rechenregeln-erwartungswert}
+Sind $X$ und $Y$ Zufallsvariable mit Werten in $\mathbb{R}$ ,
+und $\lambda\in\mathbb{R}$, dann gilt
+\begin{enumerate}
+\item $E(X+Y)=E(X)+E(Y)$
+\item $E(\lambda X)=\lambda E(X)$
+
+\end{enumerate}
+\end{satz}
+
+\section{Varianz}
+\label{sec:varianz}
+
+\begin{definition}
+Sei $X\colon\Omega\to\mathbb{R}$ eine Zufallsvariable, dann
+heisst die durch 
+\[
+\operatorname{var}(X)=E((X-E(X))^2)
+\]
+ definierte Gr"osse $\operatorname{var}(X)$ die
+{\bf Varianz} von $X$. Es ist insbesondere
+\[
+\operatorname{var}(X)=E((X-E(X))^2)=E(X^2)-E(X)^2
+\]
+\end{definition}
+
+\begin{satz}
+\label{rechenregeln-varianz}
+Seien $X$ und $Y$ unabh"angige Zufallsvariable, dann haben
+Summe und Produkt folgende Varianz:
+\begin{eqnarray*}
+\operatorname{var}(\lambda X)&=&\lambda^2\operatorname{var}(X)\\
+\operatorname{var}(X+Y)&=&\operatorname{var}(X)+\operatorname{var}(Y)\\
+\operatorname{var}(XY)&=&\operatorname{var}(X)\operatorname{var}(Y)
++
+\operatorname{var}(Y)E(X)^2+\operatorname{var}(X)E(Y)^2
+\end{eqnarray*}
+\end{satz}
+
+\section{Lineare Regression}
+\label{sec:lineareregression}
+
+Gegeben seien Wertepaare $(x_1, y_1), (x_2, y_2), ...$. Gesucht ist eine Funktion, die die Abh"angigkeit der $y_i$-Werte von den $x_i$-Werten m"oglichst gut beschreibt. Ist diese Funktion die Gerade gilt:
+\begin{satz}
+  Die Gerade mit der Gleichung $y = ax + b$, minimiert die Varianz
+\[
+var(aX + b - Y)
+\]
+wenn
+
+\begin{eqnarray*}
+a&=&\frac{E(XY)-E(X)E(Y)}{(E(X^2)-E(X)^2)}=\frac{\operatorname{cov}(X,Y)}{\operatorname{var}(X)}\\
+b&=&E(Y)-E(X)a
+\end{eqnarray*}
+
+\end{satz}
+
+\section{R}
+\label{sec:r}
+
+V
+
+\subsection{Funktionen}
+\label{sec:r-funktionen}
+
+\begin{tabular}{l l}
+  Fakult"at & \verb|factorial()| \\
+  Binomialkoeffizient & \verb|choose(n,k)| \\
+\end{tabular}
+
+\subsection{Vektoren}
+\label{sec:r-vektoren}
+
+\begin{verbatim}
+x <- c(6,10,14)
+\end{verbatim}
+erzeugt einen Vektor mit den Elementen $6, 10, 14$ und den Vektor der Variablen \verb|x| zu.
+
 \section{Octave}
 \label{sec:octave}
 
