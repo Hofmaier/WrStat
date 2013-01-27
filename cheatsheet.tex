@@ -93,9 +93,15 @@ P(A|B)=\frac{P(B|A)\cdot P(A)}{P(B)}.
 \section{Erwartungswert}
 \label{sec:erwartungswert}
 
+
+\begin{definition}
+Sei $X$ eine Funktion auf $\Omega$, und lasse sich $\Omega$ in endlich
+viele Ereignisse $A_i$ zerlegen, auf denen $X(\omega)$ konstant ist,
+dann ist der {\bf Erwartungswert} von $X$
 \[
-E=\sum_{i=1}^{n}g_iP(A_i).
+E(X)=\sum_{i=0}^nP(A_i)\cdot X(A_i)
 \]
+\end{definition}
 
 \begin{satz}
 \label{rechenregeln-erwartungswert}
@@ -155,6 +161,14 @@ b&=&E(Y)-E(X)a
 
 \end{satz}
 
+Handelt es sich um Messwerte und soll man die Koeffezienten von Hand ausrechnen, geht das einfach mit der Formel
+
+\begin{eqnarray*}
+a&=&\frac{\displaystyle n\sum_{i=1}^nx_iy_i-\sum_{i=1}^nx_i\sum_{i=1}^ny_i}{\displaystyle n\sum_{i=1}^nx_i^2-\biggl(\sum_{i=1}^nx_i\biggr)^2}\\
+b&=&\frac1n\sum_{i=1}^ny_i-a\frac1n\sum_{i=1}^nx_i\\
+\end{eqnarray*}
+
+Wenn man es in einer Tabelle von Hand rechnet, muessen die Werte , $\sum_{i=1}^nx_i$, $\sum_{i=1}^nx_i^2$, $\sum_{i=1}^ny_i$, $\sum_{i=1}^nx_iy_i$
 \section{R}
 \label{sec:r}
 
