@@ -169,6 +169,58 @@ b&=&\frac1n\sum_{i=1}^ny_i-a\frac1n\sum_{i=1}^nx_i\\
 \end{eqnarray*}
 
 Wenn man es in einer Tabelle von Hand rechnet, muessen die Werte , $\sum_{i=1}^nx_i$, $\sum_{i=1}^nx_i^2$, $\sum_{i=1}^ny_i$, $\sum_{i=1}^nx_iy_i$
+
+\section{Katalog von Wahrscheinlichkeitsverteilungen}
+
+\subsection{Gleichverteilung}
+
+\begin{definition}Die Zufallsvariable $X$ heisst auf dem Intervall
+$[a,b]$ gleichverteilt, wenn sie die Verteilungsfunktion
+\[
+F(x)=\begin{cases}
+0&\qquad x< a\\
+\frac{x-a}{b-a}&\qquad x\in[a,b]\\
+1&\qquad x> b
+\end{cases}
+\]
+mit der Wahrscheinlichkeitsdichte
+\[
+\varphi(x)=\begin{cases}
+0&\qquad x< a\\
+\frac1{b-a}&\qquad x\in[a,b]\\
+0&\qquad x> b
+\end{cases}
+\]
+hat.
+\end{definition}
+
+\subsection{Exponentialverteilung}
+\begin{definition}
+Die Wahrscheinlichkeitsverteilung mit Dichtefunktion
+\[
+\varphi(x)=\begin{cases}
+0&\qquad x<0\\
+a e^{-a x}&\qquad x\ge 0
+\end{cases}
+\]
+heisst Exponentialverteilung. Ihre Verteilungsfunktion ist
+\[
+F(x)=\begin{cases}
+0&\qquad\text{f"ur $x < 0$}\\
+1-e^{-ax}&\qquad\text{f"ur $x\ge 0$}.
+\end{cases}
+\]
+\end{definition}
+
+\begin{satz}Eine exponentialverteilte Zufallsvariable $X$ mit Parameter
+$a$ hat folgenden Erwartungswert und folgene Varianz:
+\begin{eqnarray*}
+E(X)&=&\frac1a\\
+\operatorname{var}(X)&=&\frac1{a^2}
+\end{eqnarray*}
+\end{satz}
+Der Erwartungswert entspricht der mittleren Lebensdauer.
+
 \section{R}
 \label{sec:r}
 
