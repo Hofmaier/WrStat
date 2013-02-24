@@ -2,3 +2,4 @@ auto/
 *.log
 *.aux
 *.dvi
+*.pdf
