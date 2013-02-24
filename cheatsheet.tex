@@ -14,6 +14,7 @@
 \section{Kombinatorik}
 \label{sec:kombinatorik}
 
+
 \begin{tabular}{l l}
   Produktregeln &  \\
   $k$-Permutation &  $P(n,k) = \frac{n!}{(n-k)!}$\\
@@ -21,7 +22,7 @@
   Kombination & $ C^n_k=\binom{n}{k} $ \\ 
 \end{tabular}
 
-\section{Ereignisse}
+\section{Ereignisse} 
 \label{sec:ereignisse}
 
 \begin{definition}
@@ -104,6 +105,21 @@ E(X)=\sum_{i=0}^nP(A_i)\cdot X(A_i)
 \end{definition}
 
 \begin{satz}
+Ist $X$ eine Zufallsvariable mit stetiger
+Wahrscheinlichkeitsverteilung mit Wahrscheinlichkeitsdichte
+$\varphi$, dann
+ist die Verteilungsfunktion $F$ "uberall dort differenzierbar, wo
+$\varphi$ stetig ist, und es gilt dort
+$F'(x)=\varphi(x)$.
+Erwartungswerte von $X$ k"onnen mit Hilfe von
+\begin{eqnarray*}
+E(X)&=&\int_{-\infty}^{\infty}x\varphi(x)\,dx\quad\text{und}\\
+E(f(X))&=&\int_{-\infty}^{\infty}f(x)\varphi(x)\,dx
+\end{eqnarray*}
+berechnet werden.
+\end{satz}
+
+\begin{satz}
 \label{rechenregeln-erwartungswert}
 Sind $X$ und $Y$ Zufallsvariable mit Werten in $\mathbb{R}$ ,
 und $\lambda\in\mathbb{R}$, dann gilt
@@ -170,6 +186,15 @@ b&=&\frac1n\sum_{i=1}^ny_i-a\frac1n\sum_{i=1}^nx_i\\
 
 Wenn man es in einer Tabelle von Hand rechnet, muessen die Werte , $\sum_{i=1}^nx_i$, $\sum_{i=1}^nx_i^2$, $\sum_{i=1}^ny_i$, $\sum_{i=1}^nx_iy_i$
 
+\section{Wahrscheinlichkeitsverteilung}
+
+\begin{definition}
+Sei $X$ eine Zufallsvariable. Die Funktion
+\[
+F(x) = P(X\le x)
+\]
+heisst Verteilungsfunktion von $X$. 
+\end{definition}
 \section{Katalog von Wahrscheinlichkeitsverteilungen}
 
 \subsection{Gleichverteilung}
@@ -220,6 +245,16 @@ E(X)&=&\frac1a\\
 \end{eqnarray*}
 \end{satz}
 Der Erwartungswert entspricht der mittleren Lebensdauer.
+
+\subsection{Normalverteilung}
+\label{sec:normalverteilung}
+
+\begin{satz}
+  F"ur die Verteilungsfunktion $F$ der Standardnormalverteilung gilt:
+\[
+F(-x) = 1 - F(x)
+\]
+\end{satz}
 
 \section{R}
 \label{sec:r}
