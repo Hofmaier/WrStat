@@ -144,6 +144,8 @@ heisst die durch
 \[
 \operatorname{var}(X)=E((X-E(X))^2)=E(X^2)-E(X)^2
 \]
+F"ur die Varianz schreibt man auch $\sigma^2$. Die Varianz ist eine nichtnegative Zahl. Damit kann die Wurzel $\sigma$ aus ihr gezogen werden, die Standardabweichung von $X$ genannt wird.
+
 \end{definition}
 
 \begin{satz}
@@ -195,6 +197,34 @@ F(x) = P(X\le x)
 \]
 heisst Verteilungsfunktion von $X$. 
 \end{definition}
+
+\begin{satz}
+  Sei $X$ eine stetige Zufallsvariable. Die Wahrscheinlichkeit, dass $X$ einen Wert im Intervall $[a,b]$ annimmt, ist
+\[
+P(a \le X \le b) = F(b) - F(a)
+\]
+\end{satz}
+
+\subsection{Standardisierung}
+\label{sec:standardisierung}
+
+
+\begin{satz}
+\label{satz-standardisierung}
+Ist $X$ eine Zufallsvariable mit Erwartungswert $\mu$ und
+Varianz $\sigma^2$, dann ist
+\[
+Y=\frac{X-\mu}\sigma
+\]
+eine Zufallsvariable mit Erwartungswert 0 und Varianz 1.
+Zwischen den Verteilungsfunktionen $F_X$ bzw.~$F_Y$ von $X$ bzw.~$Y$ 
+bestehen die Beziehungen
+\[
+F_Y(y)=F_X(y\sigma+\mu)\qquad F_X(x)=F_Y\left(\frac{x-\mu}\sigma\right)
+\]
+
+\end{satz}
+
 \section{Katalog von Wahrscheinlichkeitsverteilungen}
 
 \subsection{Gleichverteilung}
