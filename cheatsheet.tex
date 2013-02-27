@@ -205,6 +205,15 @@ P(a \le X \le b) = F(b) - F(a)
 \]
 \end{satz}
 
+\begin{definition}
+  Gegeben sei eine Zufallsvariable 
+$X$. Ein Wert $x_p$, f"ur den
+\[
+F(x_p) = p
+\]
+gilt, heisst $p$-Quantil von $X$.
+\end{definition}
+
 \subsection{Standardisierung}
 \label{sec:standardisierung}
 
@@ -286,6 +295,11 @@ F(-x) = 1 - F(x)
 \]
 \end{satz}
 
+Hat man den Erfahrungswert $\mu$ und die Varianz $\sigma$ einer Zufallsvariable, kann die maximale Abweichung $c$, die mit Wahrscheinlichkeit $p$ eintritt berechnen mit:
+\[
+ c = \sigma x_p
+\]
+wobei $x_p$ das $p-Quantil$ ist.
 \section{R}
 \label{sec:r}
 
