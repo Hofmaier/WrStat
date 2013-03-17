@@ -161,6 +161,22 @@ Summe und Produkt folgende Varianz:
 \end{eqnarray*}
 \end{satz}
 
+\begin{satz}
+  
+Seien $X_1,\dots,X_n$ unabh"angige und identisch verteilte Zufallsvariablen, jeweils mit Erwartungswert $\mu$ und Varianz $\sigma^2$. Dann ist auch das arithmetische Mittel
+\[
+M_n=\frac{X_1+\dots+X_n}{n}
+\]
+eine Zufallsvariable ist mit Erwartungswert
+\[
+E(M_n)=\mu
+\]
+und Varianz
+\[
+\operatorname{var}(M_n) =\frac{\sigma^2}n,
+\]
+\end{satz}
+
 \section{Lineare Regression}
 \label{sec:lineareregression}
 
@@ -288,6 +304,8 @@ Der Erwartungswert entspricht der mittleren Lebensdauer.
 \subsection{Normalverteilung}
 \label{sec:normalverteilung}
 
+Werte der Standardnormalverteilungsfunktion k"onnen in der Tabelle D.2 im Anhang des Skripts abgelesen werden.
+
 \begin{satz}
   F"ur die Verteilungsfunktion $F$ der Standardnormalverteilung gilt:
 \[
@@ -300,6 +318,40 @@ Hat man den Erfahrungswert $\mu$ und die Varianz $\sigma$ einer Zufallsvariable,
  c = \sigma x_p
 \]
 wobei $x_p$ das $p-Quantil$ ist.
+
+\subsection{Binomialverteilung}
+\label{sec:binomialverteilung}
+
+\begin{definition}
+Eine Zufallsvariable mit diskreten Werten $k\in\{0,\dots,n\}$
+heisst binomialverteilt zum Parameter $p$(Wahrscheinlichkeit dass Ereignis $A$ eintritt), wenn die Wahrscheinlichkeit
+des Wertes $k$ 
+\[
+F(x) = \binom{n}{x}p^x(1-p)^{n-x}
+\]
+ist.
+\end{definition}
+
+\section{Sch"atzen}
+\label{sec:schaetzen}
+
+\begin{definition}
+  Sei $X$ eine Zufallsvariable mit zugeh"origer Dichtefunktion $f(x, \vartheta)$. $\vartheta$ ist ein Parameter der Dichtefunktion. Seien $x_1,x_2, \dots, x_n $ Realisierungen von $X$. Dann ist
+\[
+L(X_1,\dots,X_n;\vartheta) = \prod_{i=1}^{n}f_{x_i}(x_i,\vartheta)
+\]
+die Likelihood-Funktion
+\end{definition}
+
+\begin{definition}
+  $\vartheta(X_1,\dots,X_n)$ heisst Maximum Likelihood Sch"atzer f"ur
+$\vartheta$, wenn die Likelihood Funktion (\ref{likelihood-funktion})
+maximal wird:
+\begin{equation}
+L(X_1,\dots,X_n;\vartheta(X_1,\dots,X_n)) \ge L(X_1,\dots,X_n;t)\forall t.
+\end{equation}
+\end{definition}
+
 \section{R}
 \label{sec:r}
 
