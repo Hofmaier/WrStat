@@ -52,6 +52,7 @@ nicht $A$&$\Omega\setminus A$\\
 \section{Wahrscheinlichkeit}
 \label{sec:wahrscheinlichkeit}
 
+
 \begin{satz}
   Bei einem Laplace-Experiment $| \Omega |$ m"oglichen Ergebnissen gilt
 \[
@@ -129,6 +130,26 @@ und $\lambda\in\mathbb{R}$, dann gilt
 
 \end{enumerate}
 \end{satz}
+
+\subsection{Approximation von Erwartunswerten durch arithmetisches Mittel}
+\label{sec:approxmu}
+
+Der Erwartungswert einer Verteilung kann in den "Ubungen z.T. mit dem Stichprobenmittelwert approximiert werden, denn:
+
+\begin{satz}[Bernoullis Gesetz der grossen Zahlen]
+Die Wahrscheinlichkeit, dass der Mittelwert von $n$ unabh"angigen Zufallsvariablen
+mit Mittelwert $\mu$ und Varianz $\sigma^2$ mehr als $\varepsilon$ von $\mu$
+abweicht ist
+\[
+P(|M_n-\mu|>\varepsilon)\le \frac{\sigma^2}{\varepsilon^2n}.
+\]
+Insbesondere gilt
+\[
+\lim_{n\to\infty}P(|M_n-\mu|>\varepsilon)=0.
+\]
+\end{satz}
+
+In Worten: Je gr"osser $n$, umso gr"osser ist die Wahrscheinlichkeit, dass der Stichprobenmittelwert in ein beliebig klein vorgegebenes Intervall um $\mu$ f"allt.
 
 \section{Varianz}
 \label{sec:varianz}
@@ -330,10 +351,40 @@ des Wertes $k$
 F(x) = \binom{n}{x}p^x(1-p)^{n-x}
 \]
 ist.
+
+F"ur Erwartungswert und Varianz gilt:
+
+\begin{eqnarray*}
+E(X)&=&pn\\
+\operatorname{var}(X)&=& np(1-p)
+\end{eqnarray*}
 \end{definition}
+
+\subsection{Poissonverteilung}
+\label{sec:poisson}
+
+\begin{definition}
+Eine Zufallsvariable mit diskreten Werten $k\in\{0,\dots,n\}$
+heisst poissonverteilt mit dem Parameter $ \lambda $ die Wahrscheinlichkeit
+des Wertes $k$ 
+\[
+P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}
+\]
+ist.
+
+F"ur den Erwartungswert und die Varianz gilt:
+\begin{eqnarray*}
+E(X)&=&\lambda\\
+\operatorname{var}(X)&=&\lambda
+\end{eqnarray*}
+\end{definition}
+
+Oft interessiert man sich f"ur die Anzahl $X_i$ irgendwelcher Vorkommnisse (z.B. Unf"alle, Fehler) im Zeitraum $0$ bis $t$.
 
 \section{Sch"atzen}
 \label{sec:schaetzen}
+
+Der Sch"atzfuntktion $\bar X=\frac{X_1+\dots+X_n}{n}$ (arithmetisches Mittel) heisst Stichprobenmittelwert. $\bar X$ ist erwartungstreu und konsistent f"ur $ \mu $. 
 
 \begin{definition}
   Sei $X$ eine Zufallsvariable mit zugeh"origer Dichtefunktion $f(x, \vartheta)$. $\vartheta$ ist ein Parameter der Dichtefunktion. Seien $x_1,x_2, \dots, x_n $ Realisierungen von $X$. Dann ist
